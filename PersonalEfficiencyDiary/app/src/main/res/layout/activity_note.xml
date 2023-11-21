@@ -6,123 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".NoteActivity">
 
-    <Button
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.example.personalefficiencydiary.BlankFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Назад"
-        android:onClick="onClickBtnEnd"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="ХАй"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewEvaluation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Оцените сегоднейший день:"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <EditText
-        android:id="@+id/editTextEvaluation"
-        android:layout_width="60dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="52dp"
-        android:width="10dp"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.394"
-        app:layout_constraintStart_toEndOf="@+id/textViewEvaluation"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textViewHowMuch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Cколько дел выполнено?"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.285"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewEvaluation" />
-
-    <EditText
-        android:id="@+id/editTextHowMuch"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:width="5dp"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.633"
-        app:layout_constraintStart_toEndOf="@+id/textViewHowMuch"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEvaluation" />
-
-    <TextView
-        android:id="@+id/textViewHowMuchNot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Cколько дел не выполнено?"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.319"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewHowMuch" />
-
-    <EditText
-        android:id="@+id/editTextHowMuchNot"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:width="5dp"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.394"
-        app:layout_constraintStart_toEndOf="@+id/textViewHowMuchNot"
-        app:layout_constraintTop_toBottomOf="@+id/editTextHowMuch" />
-
-    <TextView
-        android:id="@+id/textViewComent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Коментарий:"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewHowMuchNot" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="408dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="48dp"
-        android:background="@android:color/transparent"
-        android:gravity="top|start"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewComent" />
-
-
+        tools:layout_editor_absoluteX="199dp"
+        tools:layout_editor_absoluteY="361dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
