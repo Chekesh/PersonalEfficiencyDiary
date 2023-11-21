@@ -111,7 +111,17 @@ public class DataBaseAccessor extends SQLiteOpenHelper {
 
         String[] columns = new String[]{RECORDS_DATE, RECORDS_RATING};
 
+        Log.d(TAG, "\n\n");
+        Log.d(TAG, RECORDS_DATE);
+        Log.d(TAG, RECORDS_RATING);
+
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(context, layout, cursor, columns, viewIds, 0);
+        if(adapter != null){
+            Log.d(TAG, "\n\n");
+            Log.d(TAG, "true");
+            Log.d(TAG, String.valueOf(cursor.getCount()));
+            Log.d(TAG, String.valueOf(adapter.getCount()));
+        }
         return adapter;
     }
 

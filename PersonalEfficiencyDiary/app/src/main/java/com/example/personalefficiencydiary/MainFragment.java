@@ -47,7 +47,10 @@ public class MainFragment extends Fragment {
     // Адаптер для ListView
     SimpleCursorAdapter noteAdapter;
 
+    Context contextd = getContext();
+
     DataBaseAccessor db;
+
 
     // Объект доступа к базе данных
 
@@ -86,11 +89,23 @@ public class MainFragment extends Fragment {
         }
         Log.d(TAG, "\n\n");
         Log.d(TAG, "Создание 6");
+
+
+
+
         context = getContext();
+
+
+
+
         Log.d(TAG, context.toString());
         Log.d(TAG, "\n\n");
         Log.d(TAG, "Создание 7");
+
+
         db = new DataBaseAccessor(context);
+
+
         Log.d(TAG, "\n\n");
         Log.d(TAG, "Создание 8");
         Log.d(TAG, "\n\n");
@@ -102,15 +117,37 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         Log.d(TAG, "Создание 10");
+
+
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         Log.d(TAG, "\n\n");
         Log.d(TAG, "Создание 11");
+
+
         ThemesListView = view.findViewById(R.id.ListView);
+
+        Log.d(TAG, String.valueOf(ThemesListView.getCount()));
+
+        Log.d(TAG, "Создание 12");
+
         Log.d(TAG, "\n\n");
         Log.d(TAG, "Создание 12");
+
+
+        noteAdapter = AdapterUpdate();
+
+
+        Log.d(TAG, "\n\n");
+        Log.d(TAG, "Создание 12");
+
+        Log.d(TAG, String.valueOf(ThemesListView.getAdapter().getItem(1).toString()));
+
+
         button = view.findViewById(R.id.button);
         Log.d(TAG, "\n\n");
         Log.d(TAG, "Создание 13");
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -140,7 +177,7 @@ public class MainFragment extends Fragment {
         Log.d(TAG, "\n\n");
         Log.d(TAG, "Создание 14");
         // Инициализация и установка адаптера для ListView
-        noteAdapter = AdapterUpdate();
+        //noteAdapter = AdapterUpdate();
         Log.d(TAG, "\n\n");
         Log.d(TAG, "Создание 15");
         // Установка слушателя кликов для элементов ListView
@@ -169,12 +206,23 @@ public class MainFragment extends Fragment {
     }
     private SimpleCursorAdapter AdapterUpdate() {
         // Получение адаптера из класса DataBaseAccessor
+        Log.d(TAG, "\n\n");
+        Log.d(TAG, "ЗАпрос в создании адаптера");
         SimpleCursorAdapter adapter = db.getCursorAdapter(context,
                 android.R.layout.two_line_list_item, // Разметка одного элемента ListView
                 new int[]{android.R.id.text1,android.R.id.text2}); // Текст этого элемента
 
+        Log.d(TAG, "\n\n");
+        Log.d(TAG, adapter.getCursor().getColumnName(2));
+        Log.d(TAG, "adapter.getCursor().getColumnName(2)");
+        Log.d(TAG, ((Cursor) adapter.getItem(1)).getString(1));
+        Log.d(TAG, String.valueOf(adapter.getCount()));
+
+
         // Установка адаптера в ListView
         ThemesListView.setAdapter(adapter);
+        Log.d(TAG, "лист");
+        Log.d(TAG, String.valueOf(ThemesListView.getCount()));//ThemesListView.getCount();
         return adapter;
     }
     // закрытие

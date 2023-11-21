@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     final public static String KEY_COMENT = "Coment";
 
     // Контекст для приложения
-    Context context = this;
+    //Context context = this;
 
     // ListView для отображения заметок
     //ListView ThemesListView;
@@ -44,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
     //SimpleCursorAdapter noteAdapter;
 
     // Объект доступа к базе данных
-    //DataBaseAccessor db = new DataBaseAccessor(context);
+    //DataBaseAccessor db = new DataBaseAccessor(this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,15 +66,15 @@ public class MainActivity extends AppCompatActivity {
         MainFragment fragment = new MainFragment();
         Log.d(TAG, "\n\n");
         Log.d(TAG, "Создание 2");
-        Bundle bundle = new Bundle();
+        //Bundle bundle = new Bundle();
         //bundle.put
         Log.d(TAG, "\n\n");
         Log.d(TAG, "Создание 3");
-        fragment.setArguments(bundle);
+        //fragment.setArguments(bundle);
         Log.d(TAG, "\n\n");
         Log.d(TAG, "Создание 4");
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragmentContainerView,fragment)
+                .replace(R.id.fragmentContainerView2,fragment)
                 .commit();
         Log.d(TAG, "\n\n");
         Log.d(TAG, "Создание 5");
@@ -209,5 +210,27 @@ public class MainActivity extends AppCompatActivity {
                 & Configuration.SCREENLAYOUT_SIZE_MASK)
                 >= Configuration.SCREENLAYOUT_SIZE_LARGE;
     }
+
+   /*public SimpleCursorAdapter AdapterUpdate() {
+        // Получение адаптера из класса DataBaseAccessor
+        Log.d(TAG, "\n\n");
+        Log.d(TAG, "ЗАпрос в создании адаптера");
+        SimpleCursorAdapter adapter = db.getCursorAdapter(context,
+                android.R.layout.two_line_list_item, // Разметка одного элемента ListView
+                new int[]{android.R.id.text1,android.R.id.text2}); // Текст этого элемента
+
+        Log.d(TAG, "\n\n");
+        Log.d(TAG, adapter.getCursor().getColumnName(2));
+        Log.d(TAG, "adapter.getCursor().getColumnName(2)");
+        Log.d(TAG, ((Cursor) adapter.getItem(1)).getString(1));
+        Log.d(TAG, String.valueOf(adapter.getCount()));
+
+
+        // Установка адаптера в ListView
+        //ThemesListView.setAdapter(adapter);
+        Log.d(TAG, "лист");
+        //Log.d(TAG, String.valueOf(ThemesListView.getCount()));//ThemesListView.getCount();
+        return adapter;
+    }*/
 
 }
